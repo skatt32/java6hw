@@ -24,23 +24,24 @@ public class StatsService {
     }
 
     public int calcSumOfSales(long[] sales) { //сумма продаж за год
-        int SumOfSales = 0;
-        for (long Month : sales) {
-            SumOfSales += Month;
+        int sumOfSales = 0;
+        for (long month : sales) {
+            sumOfSales += month;
         }
-        return SumOfSales;
+        return sumOfSales;
     }
 
     public double calcAverageSalesAmount(long[] sales) { //средняя сумма продаж в месяц
         return calcSumOfSales(sales) / sales.length;
     }
 
+
     public int calcBelowAverage(long[] sales) { //количество месяцев, в которых продажи были ниже среднего
 
         int count = 0;
         double AverageSalesAmount = calcAverageSalesAmount(sales);
-        for (long Month : sales) {
-            if (Month < AverageSalesAmount) {
+        for (long month : sales) {
+            if (month < AverageSalesAmount) {
                 count = count + 1;
             }
         }
@@ -51,8 +52,8 @@ public class StatsService {
 
         int count = 0;
         double AverageSalesAmount = calcAverageSalesAmount(sales);
-        for (long Month : sales) {
-            if (Month > AverageSalesAmount) {
+        for (long month : sales) {
+            if (month > AverageSalesAmount) {
                 count = count + 1;
             }
         }
